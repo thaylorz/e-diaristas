@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { experimentalStyled as styled } from "@material-ui/core/styles";
 
 interface PageTitleProps {
@@ -6,7 +6,7 @@ interface PageTitleProps {
 	subtitle?: string;
 }
 
-const PageTitle: React.FC<PageTitleProps> = (props) => {
+const PageTitle: FC<PageTitleProps> = (props) => {
 	return (
 		<PageTitleContainer>
 			<PageTitleStyled>{props.title}</PageTitleStyled>

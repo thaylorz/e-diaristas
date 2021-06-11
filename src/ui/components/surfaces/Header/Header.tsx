@@ -1,11 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import { experimentalStyled as styled } from "@material-ui/core/styles";
-import { AppBar, Toolbar } from "@material-ui/core";
+import { AppBar, Toolbar, Container } from "@material-ui/core";
 
-const Header: React.FC = () => {
+const Header: FC = () => {
 	return (
 		<HeaderAppBar position={"sticky"}>
-			<Toolbar>
+			<Toolbar component={Container}>
 				<HeaderLogo src={"/img/logos/logo.svg"} alt={""}></HeaderLogo>
 			</Toolbar>
 		</HeaderAppBar>
