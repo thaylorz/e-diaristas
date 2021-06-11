@@ -5,13 +5,37 @@ import { AppBar, Toolbar } from "@material-ui/core";
 const Header: React.FC = () => {
 	return (
 		<HeaderAppBar position={"sticky"}>
-			<Toolbar></Toolbar>
+			<Toolbar>
+				<HeaderLogo src={"/img/logos/logo.svg"} alt={""}></HeaderLogo>
+			</Toolbar>
 		</HeaderAppBar>
 	);
 };
 
-const HeaderAppBar = styled(AppBar)``;
+const HeaderAppBar = styled(AppBar)`
+	background-color: ${({ theme }) => theme.palette.background.paper};
+	box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.05);
 
-const HeaderLogo = styled()``;
+	${({ theme }) => theme.breakpoints.up("md")} {
+		.MuiToolbar-root {
+			height: 100px;
+		}
+	}
+
+	${({ theme }) => theme.breakpoints.down("md")} {
+		.MuiToolbar-root {
+			display: flex;
+			justify-content: center;
+		}
+	}
+`;
+
+const HeaderLogo = styled("img")`
+	height: 25px;
+
+	${({ theme }) => theme.breakpoints.up("md")} {
+		height: 47px;
+	}
+`;
 
 export default Header;
